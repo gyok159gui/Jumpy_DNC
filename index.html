@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Jumpy - DNC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <img src="assempt/logoDNC.svg">       
+    </header>
+    <main>
+        <img src="assempt/title.svg">
+        <h1>Bem vindo ao Jumpy!</h1>
+        <form id="myForm">
+            <label>Nome Completo:</label>
+            <input class="required" type="text" placeholder="Nome completo" oninput="inputsCheck(0), validate()">
+            <span class="spanRequired">*Campo Obrigatório*</span>
+            
+            <label>Email:</label>
+            <input class="required"  placeholder="email@email.com" oninput="inputsCheck(1), validate()" >
+            <span class="spanRequired">*Campo Obrigatório*</span>
+            
+            <label>Telefone:</label>
+            <input class="required" placeholder="(99) 99999-9999" oninput="inputsCheck(2), validate()">
+            <span class="spanRequired">*Campo Obrigatório*</span>
+            
+            <label>CPF:</label>
+            <input class="required" placeholder="000.000.000-00" oninput="inputsCheck(3), validate()">
+            <span class="spanRequired">*Campo Obrigatório*</span>
+            
+            <label>Senha:</label>
+            <input class="required" type="password" placeholder="*******************" oninput="inputsCheck(4), validate()">
+            <span class="spanRequired">*Campo Obrigatório*</span>
+            
+            <button id="sendForm" type="submit" onclick="validate()">Cadastrar</button>
+            <span id="submit" class="spanRequired"></span>
+        </form>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
