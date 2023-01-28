@@ -1,7 +1,7 @@
 const form = document.getElementById('myForm')
 const inputs = document.getElementsByClassName('required')
 const spans = document.getElementsByClassName('spanRequired')
-let validateBolean = []
+const validateBolean = []
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -19,25 +19,26 @@ function inputsCheck(index) {
 }
 
 function validate(){
-    for (let i = 0; i < inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++){
         inputsCheck(i)
     }
-    if(validateBolean.includes(false)){
+    if(validateBolean.includes(false) | validateBolean == ''){
         spans[5].style.visibility = 'visible'
         spans[5].innerHTML = 'Campos obrigatórios não registrados.'
         spans[5].style.color = '#E73550'
+        console.log('falso')
     }else{
-        spans[5].innerHTML = 'Sucesso!'
-        spans[5].style.color = 'green'
-        formCheck()
+        console.log('pronto para submit')
+        spans[5].innerHTML = ''
+        let sendForm = document.getElementById('sendForm')
+        sendForm.addEventListener('click',() => {
+            spans[5].innerHTML = 'Sucesso!'
+            spans[5].style.color = 'green'
+            submit()
+        })
     }
 }
 
-function formCheck(){
-    let sendForm = document.getElementById('sendForm')
-    sendForm.addEventListener('click', (submit))
-}
-
-function submit(){
-    form.submit()
+function submit(){    
+    setTimeout (() => {form.submit()}, 2000)
 }
